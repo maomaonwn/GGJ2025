@@ -7,6 +7,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 12;
 
+    private Vector2 worldPosLeftBottom;
+    private Vector2 worldPosTopRight;
+
+    private void Start()
+    {
+        worldPosLeftBottom = Camera.main.ViewportToWorldPoint(Vector2.zero);
+        worldPosTopRight = Camera.main.ViewportToWorldPoint(Vector2.one);    
+    }
+
     private void Update()
     {
         //Input
@@ -17,6 +26,7 @@ public class PlayerController : MonoBehaviour
         PlayerMove(dir);
         PlayerRotate(dir);
         PlayerAlwaysTowardMouse();
+        Boundary();
     }
 
     void PlayerMove(Vector2 dir)
@@ -44,5 +54,13 @@ public class PlayerController : MonoBehaviour
         Vector2 towardDir = mousePos - transform.position;
         float angle = Mathf.Atan2(towardDir.x,towardDir.y)*Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(-angle,Vector3.forward);
+    }
+    
+    void Boundary()
+    {
+        Vector3 clampedPos = new Vector3(Mathf.Clamp(transform.position.x,worldPosLeftBottom.x,worldPosTopRight.x),
+                                         Mathf.Clamp(transform.position.y,worldPosLeftBottom.y,worldPosTopRight.y),
+                                         0);
+        transform.position = clampedPos; 
     }
 }
