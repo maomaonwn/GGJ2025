@@ -8,9 +8,14 @@ public class PlayerSkill : MonoBehaviour
     private float CD_Time = 0f;
     //累加器
     private float timer = 0f;
-
     private bool COOLDOWN = false;
 
+    private Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponentInChildren<Animator>();    
+    }
 
     void PlayerSkillCooldown()
     {
