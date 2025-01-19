@@ -15,4 +15,9 @@ public class GameManager : SingletonBase<GameManager>
         async = SceneManager.LoadSceneAsync(SceneNum);
         async.allowSceneActivation = true;
     }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Scene1");
+    }
 }
