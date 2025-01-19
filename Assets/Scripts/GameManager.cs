@@ -10,6 +10,16 @@ public class GameManager : SingletonBase<GameManager>
 
     AsyncOperation async;
 
+    [SerializeField]
+    public Animator loadingAnim;
+    private int FadeInBool = Animator.StringToHash("FadeIn");
+    private int FadeOutBool = Animator.StringToHash("FadeOut");
+
+    private void Start() 
+    {
+        loadingAnim = GetComponent<Animator>();
+    }
+
     public void ChangeScene()
     {
         async = SceneManager.LoadSceneAsync(SceneNum);
@@ -18,6 +28,23 @@ public class GameManager : SingletonBase<GameManager>
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Scene1");
+        SceneManager.LoadScene(1);
+        StartCoroutine(LoadSceneAnimation());
+    }
+
+/// <summary>
+/// 渐入渐出动画
+/// </summary>
+/// <returns></returns>
+    IEnumerator LoadSceneAnimation()
+    {
+        loadingAnim.SetBool(FadeInBool,true);
+        loadingAnim.SetBool(FadeOutBool,false);
+
+        yield return new WaitForSeconds(1);
+
+        loadingAnim.SetBool(FadeInBool,false);
+        loadingAnim.SetBool(FadeOutBool,true);
     }
 }
+
