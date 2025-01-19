@@ -2174,51 +2174,6 @@ PolygonCollider2D:
       - {x: 0.39999998, y: 1.645}
       - {x: 0.25, y: 1.605}
   m_UseDelaunayMesh: 0
---- !u!1 &1094445054
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1094445056}
-  - component: {fileID: 1094445055}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1094445055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094445054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 438703f0c742c3046974898b881ee928, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneNum: 0
---- !u!4 &1094445056
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094445054}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4610516, y: -0.07096271, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1218217479
 GameObject:
   m_ObjectHideFlags: 0
@@ -2247,14 +2202,14 @@ RectTransform:
   m_GameObject: {fileID: 1218217479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9573959, y: 0.5791013, z: 1}
+  m_LocalScale: {x: 18.857159, y: 8.787391, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1721833817}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -383.7, y: -234}
+  m_AnchoredPosition: {x: -166, y: -7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1218217481
@@ -2820,7 +2775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1378095642
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3025,10 +2980,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc90ecd7c2199749a66180b5c3f933e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffectItems: []
-  bgmItems: []
-  currentBGM: {fileID: 0}
-  currentEffectMusic: {fileID: 0}
+  soundEffectItems:
+  - audioName: 0
+    audioClip: {fileID: 8300000, guid: e8d205bb625d9e248a69db814bf33f71, type: 3}
+  bgmItems:
+  - audioName: 0
+    audioClip: {fileID: 8300000, guid: 444158660a3d2ff4bbc00e948474d3e6, type: 3}
+  currentBGM: {fileID: 1378095643}
+  currentEffectMusic: {fileID: 1378095643}
 --- !u!4 &1378095645
 Transform:
   m_ObjectHideFlags: 0
@@ -3917,8 +3876,7 @@ SceneRoots:
   - {fileID: 182496030}
   - {fileID: 7476093542165270550}
   - {fileID: 386928394}
-  - {fileID: 98044002}
-  - {fileID: 1378095645}
-  - {fileID: 1094445056}
   - {fileID: 1721833817}
   - {fileID: 965937471}
+  - {fileID: 98044002}
+  - {fileID: 1378095645}
